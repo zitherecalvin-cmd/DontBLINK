@@ -38,7 +38,9 @@ BPM notes: taken from each sheet's strumming section (Alapaap 148; What's Up 67,
 **[Intro]**
 
 ```
-GM7
+GM7	GM7	GM7	GM7
+C	C	C	C
+A A	B	C	D
 
 GM7                  GM7
 May isang umaga na tayo'y magsasama
@@ -404,8 +406,19 @@ It's the final countdown.   We're leaving together
      The final countdown.   We'll all miss her so.
                Em            D/F# G       C   B
 It's the final countdown. The final countdown Ohhh,
-               Em
-It's the final countdown.
+               Em        C                 Am       D
+
+It's the final countdown.   We're leaving together
+               Em        C                    Am     D
+     The final countdown.   We'll all miss her so.
+               Em            D/F# G       C   B
+It's the final countdown. The final countdown Ohhh,
+```
+
+**[Outro]**
+
+```
+E 	Eb
 ```
 
 ---

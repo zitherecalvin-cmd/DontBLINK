@@ -45,7 +45,9 @@
       bpm: 148,
       sections: [
         { label: "Intro", lines: [
-          "GM7",
+          "GM7\tGM7\tGM7\tGM7",
+          "C\tC\tC\tC",
+          "A A\tB\tC\tD",
           "",
           "GM7                  GM7",
           "May isang umaga na tayo'y magsasama",
@@ -343,8 +345,16 @@
           "     The final countdown.   We'll all miss her so.",
           "               Em            D/F# G       C   B",
           "It's the final countdown. The final countdown Ohhh,",
-          "               Em",
-          "It's the final countdown."
+          "               Em        C                 Am       D",
+          "",
+          "It's the final countdown.   We're leaving together",
+          "               Em        C                    Am     D",
+          "     The final countdown.   We'll all miss her so.",
+          "               Em            D/F# G       C   B",
+          "It's the final countdown. The final countdown Ohhh,"
+        ] },
+        { label: "Outro", lines: [
+          "E \tEb"
         ] }
       ]
     }
