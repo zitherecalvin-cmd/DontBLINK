@@ -534,17 +534,42 @@ footer.page a { color: var(--accent); }
   var jumping = false;
   var jumpTimer = null;
   var jumpStartedAt = 0;
+  var jumpTarget = null; // song element the jump should land on (null = top)
   function holdForJump() {
     jumping = true;
     jumpStartedAt = performance.now();
     scrollAccum = 0;
+    userScrolled = false;
     clearTimeout(jumpTimer);
     jumpTimer = setTimeout(endJump, 1500); // fallback if 'scrollend' is unsupported
   }
   function endJump() {
     clearTimeout(jumpTimer);
     jumping = false;
+    // Tablet browsers (Safari especially) can cut a smooth scroll short, so a
+    // tapped song might never arrive — finish the jump instantly if it fell
+    // short, unless the user has since scrolled by hand.
+    if (!userScrolled && Math.abs(mainEl.scrollTop - jumpTop(jumpTarget)) > 2) {
+      mainEl.scrollTo({ top: jumpTop(jumpTarget), behavior: 'instant' });
+    }
+    jumpTarget = null;
     if (isScrolling) pickTargetSong();
+  }
+  // Where main must scroll to so the song sits just below the toolbar
+  // (honouring its scroll-margin-top), clamped to the scrollable range.
+  function jumpTop(target) {
+    if (!target) return 0;
+    var margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+    var top = mainEl.scrollTop + target.getBoundingClientRect().top -
+      mainEl.getBoundingClientRect().top - margin;
+    return Math.max(0, Math.min(top, mainEl.scrollHeight - mainEl.clientHeight));
+  }
+  // Setlist links and the Top button scroll main directly (scrollIntoView can
+  // also try to move other scrollers and gets cancelled on some tablets).
+  function jumpTo(target) {
+    holdForJump();
+    jumpTarget = target;
+    mainEl.scrollTo({ top: jumpTop(target), behavior: 'smooth' });
   }
   // Scrolling by hand (wheel, swipe, keys, scrollbar) mid-song re-picks the
   // song to stop at. Only real user input counts — auto-scroll's own 20 ms
@@ -792,13 +817,22 @@ footer.page a { color: var(--accent); }
       e.preventDefault();
       var targetId = a.getAttribute('href').slice(1);
       var targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        holdForJump();
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (targetEl) jumpTo(targetEl);
       closeSidebar(); // switching songs always closes the mobile drawer
     });
   });
+
+  // Keep the highlighted setlist link visible. This moves the sidebar
+  // instantly — an animated scrollIntoView here would cancel a song jump
+  // still in flight on tablets (only one smooth scroll runs at a time).
+  var sidebarBrand = sidebar.querySelector('.sidebar-brand');
+  function revealNavLink(a) {
+    var box = sidebar.getBoundingClientRect();
+    var top = sidebarBrand ? sidebarBrand.getBoundingClientRect().bottom : box.top;
+    var r = a.getBoundingClientRect();
+    if (r.top < top) sidebar.scrollTop -= top - r.top + 8;
+    else if (r.bottom > box.bottom) sidebar.scrollTop += r.bottom - box.bottom + 8;
+  }
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -808,7 +842,7 @@ footer.page a { color: var(--accent); }
           a.classList.toggle('active', a.getAttribute('data-index') === idx);
         });
         var active = navLinks.find(function (a) { return a.getAttribute('data-index') === idx; });
-        if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        if (active) revealNavLink(active);
         // Songs with no BPM on their sheet fall back to the default pace,
         // rather than inheriting whatever song was on screen before.
         var bpm = parseInt(entry.target.getAttribute('data-bpm'), 10) || BASE_BPM;
@@ -825,10 +859,7 @@ footer.page a { color: var(--accent); }
     if (mainEl.scrollTop > 300) topBtn.classList.add('visible');
     else topBtn.classList.remove('visible');
   });
-  topBtn.addEventListener('click', function () {
-    holdForJump();
-    mainEl.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  topBtn.addEventListener('click', function () { jumpTo(null); });
 })();
 </script>
 </body>
