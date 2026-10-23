@@ -20,6 +20,11 @@
  * Countdown - its two [Verse] sections are numbered Verse 1 / Verse 2, and
  * its note says the original recording is in F#m.
  *
+ * Zombie (song 4, added 2026-10-23) comes from
+ * "Zombie Chords by The Cranberries.pdf" (no .docx); its chord columns were
+ * read from the PDF's exact text positions. The sheet header, chord
+ * diagrams, strumming patterns and the "Tabbed by" credit were left out.
+ *
  * BPM: from each sheet's strumming section (Alapaap 148, What's Up 67 with
  * a 57 ending, The Final Countdown 118).
  *
@@ -355,6 +360,75 @@
         ] },
         { label: "Outro", lines: [
           "E \tEb"
+        ] }
+      ]
+    },
+    {
+      number: 4,
+      title: "Zombie",
+      artist: "The Cranberries",
+      key: "E",
+      keyNote: "E minor",
+      minor: true,
+      bpm: 82,
+      note: "Key of E minor.",
+      sections: [
+        { label: "Intro", lines: [
+          "Em C G D/F#  x4"
+        ] },
+        { label: "Verse 1", lines: [
+          "Em           C                 G               D/F#",
+          "   Another head hangs lowly, child is slowly taken",
+          "Em                    C                   G              D/F#",
+          "   And the violence caused such silence, who are we mistaken",
+          "          Em                       C",
+          "But you see it's not me, it's not my family",
+          "           G                             D/F#",
+          "In your head, in your head, they are fighting",
+          "              Em                              C",
+          "With their tanks and their bombs and their bombs and their guns",
+          "           G                            D/F#",
+          "in your head, in your head, they are crying"
+        ] },
+        { label: "Chorus 1", lines: [
+          "        Em            C          G               D/F#",
+          "In your head, in your head, zombie, zombie, zombie",
+          "               Em            C           G              D/F#",
+          "What's in your head, in your head, zombie, zombie, zombie"
+        ] },
+        { label: "Instrumental", lines: [
+          "Em C G D/F# x2"
+        ] },
+        { label: "Verse 2", lines: [
+          "Em           C                  G             D/F#",
+          "   Another mother's breaking heart is taking over",
+          "Em                     C              G              D/F#",
+          "   When the violence causes silence, we must be mistaken",
+          "           Em                  C",
+          "It's the same old theme since 1916",
+          "          G                                   D/F#",
+          "In your head, in your head, they're still fighting",
+          "              Em                              C",
+          "With their tanks and their bombs and their bombs and their guns",
+          "           G                           D/F#",
+          "In your head, in your head, they are dying"
+        ] },
+        { label: "Chorus 2", lines: [
+          "        Em            C           G              D/F#",
+          "In your head, in your head, zombie, zombie, zombie",
+          "               Em            C           G              D/F#",
+          "What's in your head, in your head, zombie, zombie, zombie"
+        ] },
+        { label: "Instrumental", lines: [
+          "Em C G D/F# x2",
+          "Em C Em C x2"
+        ] },
+        { label: "Solo", lines: [
+          "Em C G D/F# x3"
+        ] },
+        { label: "Outro", lines: [
+          "Em C Em C",
+          "Em C Em"
         ] }
       ]
     }

@@ -1,7 +1,7 @@
 # DontBLINK — Chord Guide
 
-> 3 songs · designed to match the transpose-toolbar experience in `chord-guide-september-25.md` (see `chord_guide_dontblink.html`)
-> Source chords: `.docx` chord sheets in this folder (`Alapaap_Chords_by_Eraserheads.docx`, `Whats_Up_Chords_ver_2_by_4_Non_Blondes.docx`, `The_Final_Countdown_Chords_by_Europe.docx`)
+> 4 songs · designed to match the transpose-toolbar experience in `chord-guide-september-25.md` (see `chord_guide_dontblink.html`)
+> Source chords: `.docx` chord sheets in this folder (`Alapaap_Chords_by_Eraserheads.docx`, `Whats_Up_Chords_ver_2_by_4_Non_Blondes.docx`, `The_Final_Countdown_Chords_by_Europe.docx`), plus `Zombie Chords by The Cranberries.pdf`
 
 ---
 
@@ -18,7 +18,7 @@
 
 The transpose engine lives in `transpose.js` (also usable from Node) with its test suite in `test_transpose.js` (`node test_transpose.js`). Shared with the other guides in this project.
 
-BPM notes: taken from each sheet's strumming section (Alapaap 148; What's Up 67, slowing to 57 for the ending; The Final Countdown 118). What's Up is played in A with no capo (the sheet's capo 2 is dropped; chords as written). The Final Countdown is written in E minor as on the sheet — its Key toolbar shows minor names (Em), and the original recording is in F#m.
+BPM notes: taken from each sheet's strumming section (Alapaap 148; What's Up 67, slowing to 57 for the ending; The Final Countdown 118; Zombie 82). What's Up is played in A with no capo (the sheet's capo 2 is dropped; chords as written). The Final Countdown is written in E minor as on the sheet — its Key toolbar shows minor names (Em), and the original recording is in F#m. Zombie is also in E minor (Em).
 
 **Auto-scroll** in `chord_guide_dontblink.html` stops at the end of each song (when its last line reaches the bottom of the screen); press Auto-Scroll again to carry on into the next song at that song's BPM.
 
@@ -29,6 +29,7 @@ BPM notes: taken from each sheet's strumming section (Alapaap 148; What's Up 67,
 1. [Alapaap](#1-alapaap) — Eraserheads · ♩ 148 BPM · Key of G
 2. [What's Up](#2-whats-up) — 4 Non Blondes · ♩ 67 BPM · Key of A
 3. [The Final Countdown](#3-the-final-countdown) — Europe · ♩ 118 BPM · Key of E minor
+4. [Zombie](#4-zombie) — The Cranberries · ♩ 82 BPM · Key of E minor
 
 ---
 
@@ -419,6 +420,97 @@ It's the final countdown. The final countdown Ohhh,
 
 ```
 E 	Eb
+```
+
+---
+
+## 4. Zombie — The Cranberries
+♩ **82 BPM** · Key of **E** (E minor)
+
+> Key of E minor.
+
+**[Intro]**
+
+```
+Em C G D/F#  x4
+```
+
+**[Verse 1]**
+
+```
+Em           C                 G               D/F#
+   Another head hangs lowly, child is slowly taken
+Em                    C                   G              D/F#
+   And the violence caused such silence, who are we mistaken
+          Em                       C
+But you see it's not me, it's not my family
+           G                             D/F#
+In your head, in your head, they are fighting
+              Em                              C
+With their tanks and their bombs and their bombs and their guns
+           G                            D/F#
+in your head, in your head, they are crying
+```
+
+**[Chorus 1]**
+
+```
+        Em            C          G               D/F#
+In your head, in your head, zombie, zombie, zombie
+               Em            C           G              D/F#
+What's in your head, in your head, zombie, zombie, zombie
+```
+
+**[Instrumental]**
+
+```
+Em C G D/F# x2
+```
+
+**[Verse 2]**
+
+```
+Em           C                  G             D/F#
+   Another mother's breaking heart is taking over
+Em                     C              G              D/F#
+   When the violence causes silence, we must be mistaken
+           Em                  C
+It's the same old theme since 1916
+          G                                   D/F#
+In your head, in your head, they're still fighting
+              Em                              C
+With their tanks and their bombs and their bombs and their guns
+           G                           D/F#
+In your head, in your head, they are dying
+```
+
+**[Chorus 2]**
+
+```
+        Em            C           G              D/F#
+In your head, in your head, zombie, zombie, zombie
+               Em            C           G              D/F#
+What's in your head, in your head, zombie, zombie, zombie
+```
+
+**[Instrumental]**
+
+```
+Em C G D/F# x2
+Em C Em C x2
+```
+
+**[Solo]**
+
+```
+Em C G D/F# x3
+```
+
+**[Outro]**
+
+```
+Em C Em C
+Em C Em
 ```
 
 ---

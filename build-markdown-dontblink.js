@@ -94,7 +94,7 @@ var doc = [];
 doc.push('# DontBLINK — Chord Guide');
 doc.push('');
 doc.push('> ' + SONGS.length + ' songs · designed to match the transpose-toolbar experience in `chord-guide-september-25.md` (see `chord_guide_dontblink.html`)');
-doc.push('> Source chords: `.docx` chord sheets in this folder (`Alapaap_Chords_by_Eraserheads.docx`, `Whats_Up_Chords_ver_2_by_4_Non_Blondes.docx`, `The_Final_Countdown_Chords_by_Europe.docx`)');
+doc.push('> Source chords: `.docx` chord sheets in this folder (`Alapaap_Chords_by_Eraserheads.docx`, `Whats_Up_Chords_ver_2_by_4_Non_Blondes.docx`, `The_Final_Countdown_Chords_by_Europe.docx`), plus `Zombie Chords by The Cranberries.pdf`');
 doc.push('');
 doc.push('---');
 doc.push('');
@@ -111,7 +111,7 @@ doc.push("- Sharp/flat spelling automatically follows the target key's conventio
 doc.push('');
 doc.push('The transpose engine lives in `transpose.js` (also usable from Node) with its test suite in `test_transpose.js` (`node test_transpose.js`). Shared with the other guides in this project.');
 doc.push('');
-doc.push("BPM notes: taken from each sheet's strumming section (Alapaap 148; What's Up 67, slowing to 57 for the ending; The Final Countdown 118). What's Up is played in A with no capo (the sheet's capo 2 is dropped; chords as written). The Final Countdown is written in E minor as on the sheet — its Key toolbar shows minor names (Em), and the original recording is in F#m.");
+doc.push("BPM notes: taken from each sheet's strumming section (Alapaap 148; What's Up 67, slowing to 57 for the ending; The Final Countdown 118; Zombie 82). What's Up is played in A with no capo (the sheet's capo 2 is dropped; chords as written). The Final Countdown is written in E minor as on the sheet — its Key toolbar shows minor names (Em), and the original recording is in F#m. Zombie is also in E minor (Em).");
 doc.push('');
 doc.push('**Auto-scroll** in `chord_guide_dontblink.html` stops at the end of each song (when its last line reaches the bottom of the screen); press Auto-Scroll again to carry on into the next song at that song\'s BPM.');
 doc.push('');
